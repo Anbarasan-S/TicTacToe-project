@@ -1,7 +1,7 @@
 let x=false,total1=0,total2=0,is_clicked={"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0};
 const playerx=document.getElementById("player1");
 const playery=document.getElementById("player2");
-const clicked=()=>
+const clicked=(event)=>
 {
     const id=event.target.id;
     if(is_clicked[id]===0)
@@ -153,6 +153,8 @@ const ywon=()=>{
     display("Player Y scored 1 point");
     setTimeout(reset,1000);
 }
+
+
 const reset=()=>
 {
     for(let i="1";i<="9";i++)
@@ -161,6 +163,9 @@ const reset=()=>
     }
     x=false,is_clicked={"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0};
 }
+
+
+
 const display=(val)=>
 {
     document.getElementById("displaybox").innerHTML=val;
