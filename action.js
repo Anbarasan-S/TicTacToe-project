@@ -1,6 +1,7 @@
 let x=false,total1=0,total2=0,is_clicked={"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0};
 const playerx=document.getElementById("player1");
 const playery=document.getElementById("player2");
+console.log(playerx)
 const clicked=(event)=>
 {
     const id=event.target.id;
@@ -92,7 +93,6 @@ const checkWin=()=>
             return;
         }
         else if(cplayer2===3)
-
         {
             ywon();
             return;
@@ -136,6 +136,7 @@ const checkWin=()=>
     }
     if(count===9)
     {
+        console.log("count")
         display("Tie");
         setTimeout(reset,1000);
     }

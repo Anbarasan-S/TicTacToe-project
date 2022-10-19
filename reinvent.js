@@ -50,6 +50,7 @@ const checkWin=()=>{
             callO();
             gameOver();
         }
+        i=parseInt(i)
     }
     //checking each columns
     for(let i=1;i<=3;i++)
@@ -64,7 +65,9 @@ const checkWin=()=>{
             else
                 callO();
             gameOver();
+            return
         }
+        i=parseInt(i)
     }
     //checking left diagonal
     if(data['1']!=null&&data['1']===data['5']&&data['1']===data['9'])
@@ -74,6 +77,7 @@ const checkWin=()=>{
         else
         callO();
         gameOver();
+        return
     }
     //checking right diagonal
     if(data['3']!=null&&data['3']===data['5']&&data['5']===data['7'])
@@ -83,6 +87,7 @@ const checkWin=()=>{
         else
         callO();
         gameOver();
+        return
     }
     //check game over
     let i='1';
@@ -103,14 +108,12 @@ const checkWin=()=>{
 }
 
 const callX=()=>{
-    console.log("k");
     player_x++;
     document.getElementById('x').innerHTML=`PlayerX:${player_x}`;
     display('Player X scored 1 point');
 }
 
 const callO=()=>{
-    console.log("km");
     player_o++;
     document.getElementById('o').innerHTML=`PlayerY:${player_o}`;
     display('Player O scored 1 point');
@@ -119,7 +122,6 @@ const callO=()=>{
 const gameOver=()=>
 {
     const func=()=>{
-        console.log("sj")
      for(let i=1;i<=9;i++)
      {
      i=i.toString();
