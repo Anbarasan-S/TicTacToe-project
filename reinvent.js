@@ -1,6 +1,7 @@
 const is_clicked={};
 const data={};
 let x=1;
+let player_turn = 'o'
 let player_x=0;
 let player_o=0;
 
@@ -49,6 +50,7 @@ const checkWin=()=>{
             else
             callO();
             gameOver();
+            return
         }
         i=parseInt(i)
     }
@@ -127,8 +129,19 @@ const gameOver=()=>
      i=i.toString();
      document.getElementById(i).innerHTML='';
      is_clicked[i]=0;
-     data[i]=null;
-     }
+     data[i]=null; 
+    }
+    // toggle player option x or o
+        if(player_turn == 'x')
+        {
+            x = 1
+            player_turn = 'o'
+        }
+        else
+        {
+            x = 0
+            player_turn = 'x'
+        }
     }
     setTimeout(func,900);
 }
